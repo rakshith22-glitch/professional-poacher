@@ -2,6 +2,7 @@
 import { useQuery, gql } from "@apollo/client";
 import Login from "./pages/login";
 import SignUp from "./pages/signup";
+import NavBar from "./components/NavBar";
 import { Routes, Route } from "react-router-dom";
 
 // function DisplayLocations() {
@@ -34,6 +35,7 @@ import { Routes, Route } from "react-router-dom";
 export default function App() {
   return (
     <>
+    <NavBar/>
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
