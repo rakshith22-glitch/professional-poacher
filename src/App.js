@@ -2,7 +2,9 @@
 import { useQuery, gql } from "@apollo/client";
 import Login from "./pages/login";
 import SignUp from "./pages/signup";
-import NavBar from "./components/NavBar";
+import BuyItems from "./pages/buy";
+import SellItems from "./pages/sell";
+import NavBar from "./components/navbar";
 import { Routes, Route } from "react-router-dom";
 
 // function DisplayLocations() {
@@ -39,6 +41,8 @@ export default function App() {
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
+        <Route path="/buy" element={<BuyItems />} />
+        <Route path="/sell" element={<SellItems />} />
       </Routes>
     </>
   );
