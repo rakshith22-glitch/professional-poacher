@@ -8,9 +8,9 @@ const resolvers = {
       const newUser = {
         id: String(users.length + 1),
         email,
+        password,
         fullname,
         phonenumber,
-        password
       };
       users.push(newUser);
       return newUser;
