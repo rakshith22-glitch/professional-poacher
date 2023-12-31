@@ -13,11 +13,14 @@ import Divider from "@mui/material/Divider";
 import AccountCircle from "@mui/icons-material/AccountCircle";
 import Settings from "@mui/icons-material/Settings";
 import Logout from "@mui/icons-material/Logout";
+import Login from "@mui/icons-material/Login";
 import MoreIcon from "@mui/icons-material/MoreVert";
 import Button from "@mui/material/Button";
 import SportsTennisIcon from "@mui/icons-material/SportsTennis";
+import { useNavigate } from 'react-router-dom';
 
 const NavBar = () => {
+  const navigate = useNavigate();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const isMenuOpen = Boolean(anchorEl);
 
@@ -30,6 +33,14 @@ const NavBar = () => {
 
   const handleMobileMenuClose = () => {
     setMobileMoreAnchorEl(null);
+  };
+
+  const handleLogin = () => {
+    navigate("/login")
+  };
+
+  const handleLogout = () => {
+    navigate("/")
   };
 
   const handleMenuClose = () => {
@@ -71,7 +82,13 @@ const NavBar = () => {
         </ListItemIcon>
         Settings
       </MenuItem>
-      <MenuItem onClick={handleMenuClose}>
+      <MenuItem onClick={handleLogin}>
+        <ListItemIcon>
+          <Login fontSize="small" />
+        </ListItemIcon>
+        Login
+      </MenuItem>
+      <MenuItem onClick={handleLogout}>
         <ListItemIcon>
           <Logout fontSize="small" />
         </ListItemIcon>
