@@ -6,7 +6,7 @@ import { BrowserRouter } from 'react-router-dom';
 
 
 const client = new ApolloClient({
-  uri: 'https://flyby-router-demo.herokuapp.com/',
+  uri: 'http://localhost:4000/',
   cache: new InMemoryCache(),
 });
 

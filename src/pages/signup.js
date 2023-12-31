@@ -4,16 +4,44 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
+import { useMutation } from "@apollo/client";
+import { SIGNUP_MUTATION } from "../graphql/mutation"; // Replace with your actual path
+import { useNavigate } from "react-router-dom";
 export default function SignUp() {
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
     formState: { errors },
+    setError,
   } = useForm();
 
-  const onSubmit = (data) => {
-    // Add your login logic here using the data object
-    console.log("SignUp successful", data);
+  const [signUp, { loading, error }] = useMutation(SIGNUP_MUTATION);
+
+  const onSubmit = async (data) => {
+    try {
+      // Call the signUp mutation here
+      const result = await signUp({
+        variables: {
+          email: data.email,
+          password: data.password,
+          fullname: data.fullname,
+          phonenumber: data.phonenumber,
+        },
+      });
+
+      // Handle success
+      console.log("SignUp successful", result);
+      navigate("/")
+    } catch (error) {
+      // Handle error and set form errors if necessary
+      console.error("Error while signing up", error);
+      // Example: Setting error for a specific field
+      setError("email", {
+        type: "manual",
+        message: "Error occurred during signup. Please try again.",
+      });
+    }
   };
 
   return (
@@ -38,44 +66,52 @@ export default function SignUp() {
       <TextField
         required
         type="text"
-        placeholder="Email"
+        placeholder="Full Name"
         fullWidth
-        label="Email"
-        {...register("Email", { required: true, pattern: /^\S+@\S+$/i })}
+        label="Full Name"
+        {...register("fullname", { required: true, maxLength: 80 })}
         margin="normal"
-      />
-      <TextField
-        margin="normal"
-        required
-        fullWidth
-        name="password"
-        label="Password"
-        type="password"
-        id="password"
-        autoComplete="current-password"
+        error={!!errors.fullname}
+        helperText={errors.fullname && "Full Name is required"}
       />
       <TextField
         required
         type="text"
-        placeholder="Full name"
+        placeholder="Email"
         fullWidth
-        label="Full name"
-        {...register("Full name", { required: true, maxLength: 80 })}
+        label="Email"
+        {...register("email", {
+          required: true,
+          pattern: /^\S+@\S+\.\S+$/i,
+        })}
         margin="normal"
+        error={!!errors.email}
+        helperText={errors.email && "Enter a valid email address"}
       />
       <TextField
         required
+        type="password"
         fullWidth
+        label="Password"
+        {...register("password", { required: true })}
+        margin="normal"
+        error={!!errors.password}
+        helperText={errors.password && "Password is required"}
+      />
+      <TextField
+        required
         type="tel"
-        label="Phone number"
-        placeholder="Number"
-        {...register("Phone number", {
+        fullWidth
+        label="Phone Number"
+        {...register("phonenumber", {
           required: true,
           pattern: /^(\+\d{1,2}\s?)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/i,
           minLength: 6,
           maxLength: 12,
         })}
         margin="normal"
+        error={!!errors.phonenumber}
+        helperText={errors.phonenumber && "Enter a valid phone number"}
       />
 
       <Button
@@ -84,9 +120,15 @@ export default function SignUp() {
         color="primary"
         fullWidth
         sx={{ mt: 2 }}
+        disabled={loading}
       >
-        SignUp
+        {loading ? "Signing Up..." : "Sign Up"}
       </Button>
+      {error && (
+        <Typography variant="body2" color="error" sx={{ mt: 2 }}>
+          Error: {error.message}
+        </Typography>
+      )}
     </Box>
   );
 }
