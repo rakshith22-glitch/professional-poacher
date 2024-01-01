@@ -17,6 +17,7 @@ export const CHECK_USER = gql`
     checkUser(email: $email, password: $password) {
       id
       email
+      password
       # Add other fields you want to retrieve if the user exists
     }
   }

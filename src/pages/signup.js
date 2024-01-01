@@ -32,7 +32,7 @@ export default function SignUp() {
 
       // Handle success
       console.log("SignUp successful", result);
-      navigate("/")
+      navigate("/login")
     } catch (error) {
       // Handle error and set form errors if necessary
       console.error("Error while signing up", error);

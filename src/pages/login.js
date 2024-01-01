@@ -6,17 +6,52 @@ import Checkbox from "@mui/material/Checkbox";
 import Link from "@mui/material/Link";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
-
+import { useMutation } from "@apollo/client";
+import { CHECK_USER } from "../graphql/mutation";
+import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 const Login = () => {
   const {
     register,
     handleSubmit,
     formState: { errors },
+    setError,
   } = useForm();
 
-  const onSubmit = (data) => {
+  const navigate = useNavigate();
+  const [logIn, { loading, error }] = useMutation(CHECK_USER);
+  const [token, setToken] = useState(null);
+
+  const onSubmit = async (data) => {
     // Add your login logic here using the data object
     console.log("Login successful", data);
+    try {
+      // Call the signUp mutation here
+      const result = await logIn({
+        variables: {
+          email: data.email,
+          password: data.password,
+        },
+      });
+      const { token } = result.data; // Modify this according to your actual token retrieval method
+
+      // Store the token in localStorage
+      localStorage.setItem("authToken", token);
+
+      // Set the token in component state for further usage if needed
+      setToken(token);
+      // Handle success
+      console.log("LogIn successful", result);
+      navigate("/");
+    } catch (error) {
+      // Handle error and set form errors if necessary
+      console.error("Error while loging in", error);
+      // Example: Setting error for a specific field
+      setError("email", {
+        type: "manual",
+        message: "Error occurred during login. Please try again.",
+      });
+    }
   };
 
   return (
@@ -39,18 +74,18 @@ const Login = () => {
         Login
       </Typography>
       <TextField
+        required
+        type="text"
+        placeholder="Email"
         fullWidth
-        label="Username"
-        {...register("username", {
-          required: "Username is required",
-          minLength: {
-            value: 3,
-            message: "Username must be at least 3 characters",
-          },
+        label="Email"
+        {...register("email", {
+          required: true,
+          pattern: /^\S+@\S+\.\S+$/i,
         })}
-        error={Boolean(errors.username)}
-        helperText={errors.username?.message}
         margin="normal"
+        error={!!errors.email}
+        helperText={errors.email && "Enter a valid email address"}
       />
       <TextField
         fullWidth
