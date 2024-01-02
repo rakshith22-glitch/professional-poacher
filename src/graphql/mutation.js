@@ -25,3 +25,15 @@ export const CHECK_USER = gql`
     }
   }
 `;
+
+
+export const UPDATE_USER = gql`
+mutation UpdateUser($id: ID!, $fullname: String, $email: String, $phonenumber: String) {
+  updateUser(id: $id, fullname: $fullname, email: $email, phonenumber: $phonenumber) {
+      id
+      fullname
+      email
+      phonenumber
+  }
+}
+`;

@@ -7,7 +7,9 @@ import Button from "@mui/material/Button";
 import { useMutation } from "@apollo/client";
 import { SIGNUP_MUTATION } from "../graphql/mutation"; // Replace with your actual path
 import { useNavigate } from "react-router-dom";
-export default function SignUp() {
+
+
+const SignUp = ({ onSignupSuccess }) => {
   const navigate = useNavigate();
   const {
     register,
@@ -29,10 +31,10 @@ export default function SignUp() {
           phonenumber: data.phonenumber,
         },
       });
-
+      onSignupSuccess(data);
       // Handle success
-      console.log("SignUp successful", result);
-      navigate("/login")
+      console.log("SignUp successful", data);
+      navigate("/profile")
     } catch (error) {
       // Handle error and set form errors if necessary
       console.error("Error while signing up", error);
@@ -132,3 +134,6 @@ export default function SignUp() {
     </Box>
   );
 }
+
+
+export default SignUp;

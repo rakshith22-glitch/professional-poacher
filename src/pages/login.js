@@ -11,7 +11,7 @@ import { CHECK_USER } from '../graphql/mutation';
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 
-const Login = () => {
+const Login = ({ onLoginSuccess }) => {
   const {
     register,
     handleSubmit,
@@ -42,6 +42,7 @@ const Login = () => {
 
       // Handle success, navigate to the desired page
       console.log('Login successful', token);
+      onLoginSuccess(token);
       navigate('/'); // Redirect to the home page or any other page
     } catch (error) {
       // Handle error and set form errors if necessary
