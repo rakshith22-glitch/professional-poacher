@@ -1,5 +1,6 @@
-// For simplicity, you can use a dummy array to represent user data.
-// In a real application, you'd interact with a database.
+import jwt from "jsonwebtoken";
+import { secretKey } from './auth.js';
+
 let users = [];
 
 const resolvers = {
@@ -15,19 +16,24 @@ const resolvers = {
       users.push(newUser);
       return newUser;
     },
-    
-      checkUser: (_, { email, password }) => {
-        // Find the user by email and password (replace with database query)
-        const user = users.find((user) => user.email === email && user.password === password);
-  
-        if (!user) {
-          throw new Error('User does not exist or invalid credentials');
-        }
-  
-        return user;
-      },
-      // Implement other mutations if needed
+
+    checkUser: (_, { email, password }) => {
+      // Find the user by email and password (replace with database query)
+      const user = users.find((user) => user.email === email && user.password === password);
+
+      if (!user) {
+        throw new Error('User does not exist or invalid credentials');
+      }
+
+      // Generate an authentication token and include it in the response
+      const token = jwt.sign({ email: user.email }, secretKey, { expiresIn: '1h' });
+
+      return {
+        token,
+        user,
+      };
+    },
   },
 };
 
-export default resolvers
+export default resolvers;

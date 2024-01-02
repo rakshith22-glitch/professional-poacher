@@ -15,10 +15,13 @@ export const SIGNUP_MUTATION = gql`
 export const CHECK_USER = gql`
   mutation CheckUser($email: String!, $password: String!) {
     checkUser(email: $email, password: $password) {
-      id
-      email
-      password
-      # Add other fields you want to retrieve if the user exists
+      user {
+        id
+        email
+        password
+        # Add other fields you want to retrieve if the user exists
+      }
+      token # Include the authToken in the response
     }
   }
 `;

@@ -3,7 +3,8 @@ import Box from "@mui/material/Box";
 import IconButton from "@mui/material/IconButton";
 import HomeIcon from "../assets/icon.jpeg";
 
-export default function Home() {
+const Home = () => {
+
   return (
     <Box
       sx={{
@@ -19,12 +20,14 @@ export default function Home() {
       }}
     >
       <IconButton size="large" aria-label="new notifications" color="inherit">
-      <img src={HomeIcon} alt="Icon" width="44" height="44" />
+        <img src={HomeIcon} alt="Icon" width="44" height="44" />
       </IconButton>{" "}
       Welcome to Professional Poacher !!
       <IconButton size="large" aria-label="new notifications" color="inherit">
-      <img src={HomeIcon} alt="Icon" width="44" height="44" />
+        <img src={HomeIcon} alt="Icon" width="44" height="44" />
       </IconButton>
     </Box>
   );
-}
+};
+
+export default Home;
