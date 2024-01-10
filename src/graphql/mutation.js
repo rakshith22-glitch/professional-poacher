@@ -21,7 +21,7 @@ export const CHECK_USER = gql`
         password
         # Add other fields you want to retrieve if the user exists
       }
-      token # Include the authToken in the response
+      # Include the authToken in the response
     }
   }
 `;
@@ -36,4 +36,16 @@ mutation UpdateUser($id: ID!, $fullname: String, $email: String, $phonenumber: S
       phonenumber
   }
 }
+`;
+
+
+export const GET_USER_INFO = gql`
+  query GetUserInfo {
+    getUserInfo {
+      id
+      email
+      fullname
+      phonenumber
+    }
+  }
 `;

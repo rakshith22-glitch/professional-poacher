@@ -34,7 +34,7 @@ const SignUp = ({ onSignupSuccess }) => {
       onSignupSuccess(data);
       // Handle success
       console.log("SignUp successful", data);
-      navigate("/profile")
+      navigate("/login")
     } catch (error) {
       // Handle error and set form errors if necessary
       console.error("Error while signing up", error);

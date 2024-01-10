@@ -19,11 +19,12 @@ const typeDefs = gql`
     # Define a placeholder field in the root Query type
     getAllUsers: [User!]!
     # Add other query fields as needed
+    getUserInfo: User
   }
 
   type Mutation {
     createUser(email: String!, password: String!, fullname: String!, phonenumber: String!): User!
-    checkUser(email: String!, password: String!): AuthPayload # Update return type to AuthPayload
+    checkUser(email: String!, password: String!): User # Update return type to AuthPayload
     updateUser(id: ID!, email: String, password: String, fullname: String, phonenumber: String): User
     # Define other mutations here
   }

@@ -1,16 +1,17 @@
 import React, { useState } from 'react';
 import { Container, Box, Typography, Avatar, Button, TextField } from '@mui/material';
-import { UPDATE_USER } from '../graphql/mutation';
-import { useMutation } from '@apollo/client';
+import { UPDATE_USER, GET_USER_INFO } from '../graphql/mutation';
+import { useMutation ,useQuery } from '@apollo/client';
 const ProfilePage = ({ profile }) => {
+    const { loading1, error1, data1 } = useQuery(GET_USER_INFO);
     const [updateUser, { data, loading, error }] = useMutation(UPDATE_USER);
-
+    console.log("USERINFO", data1)
     const [isEditMode, setIsEditMode] = useState(false);
     const [userInfo, setUserInfo] = useState({
-        fullname: profile.fullname,
-        email: profile.email,
-        phonenumber: profile.phonenumber,
-        imageUrl: profile.imageUrl
+        fullname: 'me',
+        email: 'me',
+        phonenumber: 'me',
+        imageUrl: 'me'
     });
 
     const handleEditClick = () => {

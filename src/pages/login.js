@@ -11,7 +11,7 @@ import { CHECK_USER } from '../graphql/mutation';
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 
-const Login = ({ onLoginSuccess }) => {
+const Login = () => {
   const {
     register,
     handleSubmit,
@@ -31,18 +31,13 @@ const Login = ({ onLoginSuccess }) => {
           password: data.password,
         },
       });
-
-      const { token } = result.data.checkUser; // Destructure authToken from the response
+      console.log(result.data.checkUser)
+      setAuthToken(result.data.checkUser); // Destructure authToken from the response
 
       // Store the authToken in localStorage for future use
-      localStorage.setItem('token', token);
-
-      // // Set the authToken in component state for further usage if needed
-      setAuthToken(token);
-
+      localStorage.setItem('authToken', authToken);
       // Handle success, navigate to the desired page
-      console.log('Login successful', token);
-      onLoginSuccess(token);
+      console.log('Login successful', authToken);
       navigate('/'); // Redirect to the home page or any other page
     } catch (error) {
       // Handle error and set form errors if necessary

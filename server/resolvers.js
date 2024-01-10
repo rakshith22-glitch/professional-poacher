@@ -33,7 +33,6 @@ const resolvers = {
       });
 
       return {
-        token,
         user,
       };
     },
@@ -59,6 +58,28 @@ const resolvers = {
       // Replace with actual logic to fetch users from a database
       return users;
     },
+    getUserInfo: async (_, args, { user, db }) => {
+      if (!user) {
+          throw new Error('Not Authenticated');
+      }
+
+      // Assuming `user` contains the authenticated user's ID or other identifier
+      // and `db` is your database connection
+      const userInfo = await db.collection('users').findOne({ _id: user.id });
+      
+      if (!userInfo) {
+          throw new Error('User not found');
+      }
+
+      // Return the user information, excluding sensitive data like passwords
+      return {
+          id: userInfo._id,
+          email: userInfo.email,
+          fullname: userInfo.fullname,
+          phonenumber: userInfo.phonenumber,
+          // ... other fields you want to return
+      };
+  },
   },
 };
 

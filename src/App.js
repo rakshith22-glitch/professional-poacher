@@ -17,15 +17,12 @@ export default function App() {
     setUserProfile(userData);
   };
 
-  const handleLoginSuccess = (userData) => {
-    setUserProfile(userData);
-};
   return (
     <>
       <NavBar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login onLoginSuccess={handleLoginSuccess} />} />
+        <Route path="/login" element={<Login />} />
         <Route
           path="/signup"
           element={<SignUp onSignupSuccess={handleSignUpSuccess} />}
