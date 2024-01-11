@@ -1,0 +1,28 @@
+{
+  "users": [
+    {
+      "name": "John Doe",
+      "messages": [
+        "Hi there, how are you?",
+        "It's a great day today!",
+        "Looking forward to our meeting."
+      ]
+    },
+    {
+      "name": "Jane Smith",
+      "messages": [
+        "Hello! Just checking in.",
+        "Did you get the documents I sent?",
+        "Let's catch up soon."
+      ]
+    },
+    {
+      "name": "Emily Johnson",
+      "messages": [
+        "Can you send me the report?",
+        "Thanks for your help!",
+        "See you at the event."
+      ]
+    }
+  ]
+}

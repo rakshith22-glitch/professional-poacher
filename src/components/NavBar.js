@@ -29,6 +29,7 @@ const NavBar = () => {
 
   const handleProfileMenuOpen = (event) => {
     setAnchorEl(event.currentTarget);
+
   };
 
   const handleMobileMenuClose = () => {
@@ -38,7 +39,9 @@ const NavBar = () => {
   const handleLogin = () => {
     navigate("/login")
   };
-
+  const handleProfileNavigate = () => {
+    navigate("/profile")
+  };
   const handleLogout = () => {
     navigate("/")
   };
@@ -51,6 +54,10 @@ const NavBar = () => {
   const handleMobileMenuOpen = (event) => {
     setMobileMoreAnchorEl(event.currentTarget);
   };
+
+  const handleMessagePageOpen = () => {
+    navigate("/messages")
+  }
 
   const menuId = "account-menu";
   const renderMenu = (
@@ -70,7 +77,7 @@ const NavBar = () => {
       onClose={handleMenuClose}
     >
       <MenuItem onClick={handleMenuClose}>
-        <ListItemIcon>
+        <ListItemIcon onClick={handleProfileNavigate}>
           <AccountCircle fontSize="small" />
         </ListItemIcon>
         Profile
@@ -115,7 +122,7 @@ const NavBar = () => {
       onClose={handleMobileMenuClose}
     >
       <MenuItem>
-        <IconButton size="large" aria-label="new mails" color="inherit">
+        <IconButton size="large" aria-label="new mails" color="inherit" onClick={handleMessagePageOpen}>
           <MailIcon />
         </IconButton>
         <p>Messages</p>
@@ -139,17 +146,13 @@ const NavBar = () => {
 
           <Box sx={{ flexGrow: 1 }}>
             <Button variant="primary" href="/buy">
-              Buy
+              Buy/Sell
             </Button>
-
-            <Button variant="primary" href="/sell">
-              Sell
-            </Button>
-            <Button variant="primary">Find A Partner</Button>
+            <Button variant="primary" href="/users">Pickle-Partner</Button>
           </Box>
 
           <Box sx={{ ml: 2, display: { xs: "none", md: "flex" } }}>
-            <IconButton size="large" aria-label="mails" color="inherit">
+            <IconButton size="large" aria-label="mails" color="inherit" onClick={handleMessagePageOpen}>
               <MailIcon />
             </IconButton>
             <IconButton size="large" aria-label="notifications" color="inherit">
