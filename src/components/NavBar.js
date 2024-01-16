@@ -18,7 +18,7 @@ import MoreIcon from "@mui/icons-material/MoreVert";
 import Button from "@mui/material/Button";
 import SportsTennisIcon from "@mui/icons-material/SportsTennis";
 import { useNavigate } from 'react-router-dom';
-
+import HomeIcon from "../assets/logo1.png";
 const NavBar = () => {
   const navigate = useNavigate();
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -76,19 +76,13 @@ const NavBar = () => {
       open={isMenuOpen}
       onClose={handleMenuClose}
     >
-      <MenuItem onClick={handleMenuClose}>
-        <ListItemIcon onClick={handleProfileNavigate}>
+      <MenuItem onClick={handleProfileNavigate}>
+        <ListItemIcon >
           <AccountCircle fontSize="small" />
         </ListItemIcon>
         Profile
       </MenuItem>
       <Divider />
-      <MenuItem onClick={handleMenuClose}>
-        <ListItemIcon>
-          <Settings fontSize="small" />
-        </ListItemIcon>
-        Settings
-      </MenuItem>
       <MenuItem onClick={handleLogin}>
         <ListItemIcon>
           <Login fontSize="small" />
@@ -121,8 +115,8 @@ const NavBar = () => {
       open={isMobileMenuOpen}
       onClose={handleMobileMenuClose}
     >
-      <MenuItem>
-        <IconButton size="large" aria-label="new mails" color="inherit" onClick={handleMessagePageOpen}>
+      <MenuItem onClick={handleMessagePageOpen}>
+        <IconButton size="large" aria-label="new mails" color="inherit" >
           <MailIcon />
         </IconButton>
         <p>Messages</p>
@@ -141,13 +135,15 @@ const NavBar = () => {
       <AppBar position="fixed">
         <Toolbar disableGutters>
           <Button variant="primary" href="/">
-            <SportsTennisIcon fontSize="large"></SportsTennisIcon>
+          <IconButton size="large" aria-label="new notifications" color="inherit">
+        <img src={HomeIcon} alt="Icon" width="44" height="44" />
+      </IconButton>
           </Button>
 
           <Box sx={{ flexGrow: 1 }}>
-            <Button variant="primary" href="/buy">
+            {/* <Button variant="primary" href="/buy">
               Buy/Sell
-            </Button>
+            </Button> */}
             <Button variant="primary" href="/users">Pickle-Partner</Button>
           </Box>
 

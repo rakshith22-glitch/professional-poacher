@@ -2,18 +2,24 @@
 import { useQuery, gql } from "@apollo/client";
 import Login from "./pages/login";
 import SignUp from "./pages/signup";
-import BuyItems from "./pages/buy";
-import SellItems from "./pages/sell";
 import Home from "./pages/home";
-import Userlist from './pages/userlist';
-import NavBar from "./components/navbar";
+import Userlist from './pages/user/userlist';
+import NavBar from "./components/navbar"
 import { Routes, Route } from "react-router-dom";
 import ProfilePage from "./pages/profile";
 import DummyProfile from "./pages/dummyprofile";
 import { useState } from "react";
 import MessageList from './pages/messages';
-
-
+import ChatWithPage from "./pages/chatwith";
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+const theme = createTheme({
+  palette: {
+    background: {
+      default: '#1976d2'
+    },
+  },
+  // ...other theme options
+});
 export default function App() {
   const [userProfile, setUserProfile] = useState(null);
 
@@ -22,7 +28,7 @@ export default function App() {
   };
 
   return (
-    <>
+    <ThemeProvider theme={theme}>
       <NavBar />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -35,13 +41,11 @@ export default function App() {
           path="/profile"
           element={<ProfilePage profile={userProfile} />}
         />
-        <Route path="/buy" element={<BuyItems />} />
-        <Route path="/sell" element={<SellItems />} />
-        <Route path="/profile" element={<ProfilePage />} />
         <Route path="/users" element={<Userlist />} />
         <Route path="/user/:userId" element={<DummyProfile />} />
         <Route path="/messages" element={<MessageList />} />
+        <Route path="/chat/:chatWith" element={<ChatWithPage />} />
       </Routes>
-    </>
+    </ThemeProvider>
   );
 }

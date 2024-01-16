@@ -1,27 +1,139 @@
 {
-  "users": [
+  "currentUser": "John Doe",
+  "chats": [
     {
-      "name": "John Doe",
+      "with": "Jane Smith",
       "messages": [
-        "Hi there, how are you?",
-        "It's a great day today!",
-        "Looking forward to our meeting."
+        {
+          "type": "sent",
+          "text": "Hi there, how are you?"
+        },
+        {
+          "type": "received",
+          "text": "Hello! Just checking in."
+        },
+        {
+          "type": "sent",
+          "text": "It's a great day today!"
+        },
+        {
+          "type": "received",
+          "text": "Did you get the documents I sent?"
+        },
+        {
+          "type": "sent",
+          "text": "Looking forward to our meeting."
+        },
+        {
+          "type": "received",
+          "text": "Let's catch up soon."
+        }
       ]
     },
     {
-      "name": "Jane Smith",
+      "with": "Emily Johnson",
       "messages": [
-        "Hello! Just checking in.",
-        "Did you get the documents I sent?",
-        "Let's catch up soon."
+        {
+          "type": "received",
+          "text": "Can you send me the report?"
+        },
+        {
+          "type": "sent",
+          "text": "Thanks for your help!"
+        },
+        {
+          "type": "received",
+          "text": "See you at the event."
+        }
       ]
     },
     {
-      "name": "Emily Johnson",
+      "with": "Michael Brown",
       "messages": [
-        "Can you send me the report?",
-        "Thanks for your help!",
-        "See you at the event."
+        {
+          "type": "sent",
+          "text": "Are we still on for the project discussion?"
+        },
+        {
+          "type": "received",
+          "text": "Yes, I've prepared the first draft."
+        },
+        {
+          "type": "sent",
+          "text": "Great, let's meet tomorrow."
+        }
+      ]
+    },
+    {
+      "with": "Sophia Davis",
+      "messages": [
+        {
+          "type": "received",
+          "text": "I loved your presentation yesterday!"
+        },
+        {
+          "type": "sent",
+          "text": "Thank you, Sophia! Glad you liked it."
+        },
+        {
+          "type": "received",
+          "text": "Can we discuss it over coffee?"
+        },
+        {
+          "type": "sent",
+          "text": "Sure, I'm free on Friday afternoon."
+        }
+      ]
+    },
+    {
+      "with": "Lucas Martinez",
+      "messages": [
+        {
+          "type": "sent",
+          "text": "Hey, are you joining the game night?"
+        },
+        {
+          "type": "received",
+          "text": "Wouldn't miss it, see you there!"
+        },
+        {
+          "type": "sent",
+          "text": "Awesome, bring snacks!"
+        }
+      ]
+    },
+    {
+      "with": "Olivia Brown",
+      "messages": [
+        {
+          "type": "received",
+          "text": "John, can you review my report?"
+        },
+        {
+          "type": "sent",
+          "text": "Of course, sending feedback by EOD."
+        },
+        {
+          "type": "received",
+          "text": "Thanks a lot!"
+        }
+      ]
+    },
+    {
+      "with": "Ethan Wilson",
+      "messages": [
+        {
+          "type": "sent",
+          "text": "Ethan, your new design looks great!"
+        },
+        {
+          "type": "received",
+          "text": "Glad you think so. Any suggestions?"
+        },
+        {
+          "type": "sent",
+          "text": "Let's discuss more in our meeting."
+        }
       ]
     }
   ]

@@ -21,8 +21,8 @@ const Home = () => {
     >
       <IconButton size="large" aria-label="new notifications" color="inherit">
         <img src={HomeIcon} alt="Icon" width="44" height="44" />
-      </IconButton>{" "}
-      Welcome to Professional Poacher !!
+      </IconButton>
+      Welcome to Professional Poacher
       <IconButton size="large" aria-label="new notifications" color="inherit">
         <img src={HomeIcon} alt="Icon" width="44" height="44" />
       </IconButton>

@@ -1,0 +1,309 @@
+[
+    {
+        "id": "0",
+        "name": "John Doe",
+        "phone": "+1234567890",
+        "email": "john.doe@example.com",
+        "address": {
+            "city": "New York",
+            "address": "123 Main St"
+        },
+        "image": "",
+        "age": 28,
+        "sex": "M",
+        "rating": {
+            "singles": 5.2,
+            "doubles": 4.5
+        },
+        "chats": [
+            {
+              "with": "Jane Smith",
+              "messages": [
+                {
+                  "type": "sent",
+                  "text": "Hi there, how are you?"
+                },
+                {
+                  "type": "received",
+                  "text": "Hello! Just checking in."
+                },
+                {
+                  "type": "sent",
+                  "text": "It's a great day today!"
+                },
+                {
+                  "type": "received",
+                  "text": "Did you get the documents I sent?"
+                },
+                {
+                  "type": "sent",
+                  "text": "Looking forward to our meeting."
+                },
+                {
+                  "type": "received",
+                  "text": "Let's catch up soon."
+                }
+              ]
+            },
+            {
+              "with": "Emily Johnson",
+              "messages": [
+                {
+                  "type": "received",
+                  "text": "Can you send me the report?"
+                },
+                {
+                  "type": "sent",
+                  "text": "Thanks for your help!"
+                },
+                {
+                  "type": "received",
+                  "text": "See you at the event."
+                }
+              ]
+            },
+            {
+              "with": "Michael Brown",
+              "messages": [
+                {
+                  "type": "sent",
+                  "text": "Are we still on for the project discussion?"
+                },
+                {
+                  "type": "received",
+                  "text": "Yes, I've prepared the first draft."
+                },
+                {
+                  "type": "sent",
+                  "text": "Great, let's meet tomorrow."
+                }
+              ]
+            },
+            {
+              "with": "Sophia Davis",
+              "messages": [
+                {
+                  "type": "received",
+                  "text": "I loved your presentation yesterday!"
+                },
+                {
+                  "type": "sent",
+                  "text": "Thank you, Sophia! Glad you liked it."
+                },
+                {
+                  "type": "received",
+                  "text": "Can we discuss it over coffee?"
+                },
+                {
+                  "type": "sent",
+                  "text": "Sure, I'm free on Friday afternoon."
+                }
+              ]
+            },
+            {
+              "with": "Lucas Martinez",
+              "messages": [
+                {
+                  "type": "sent",
+                  "text": "Hey, are you joining the game night?"
+                },
+                {
+                  "type": "received",
+                  "text": "Wouldn't miss it, see you there!"
+                },
+                {
+                  "type": "sent",
+                  "text": "Awesome, bring snacks!"
+                }
+              ]
+            },
+            {
+              "with": "Olivia Brown",
+              "messages": [
+                {
+                  "type": "received",
+                  "text": "John, can you review my report?"
+                },
+                {
+                  "type": "sent",
+                  "text": "Of course, sending feedback by EOD."
+                },
+                {
+                  "type": "received",
+                  "text": "Thanks a lot!"
+                }
+              ]
+            },
+            {
+              "with": "Ethan Wilson",
+              "messages": [
+                {
+                  "type": "sent",
+                  "text": "Ethan, your new design looks great!"
+                },
+                {
+                  "type": "received",
+                  "text": "Glad you think so. Any suggestions?"
+                },
+                {
+                  "type": "sent",
+                  "text": "Let's discuss more in our meeting."
+                }
+              ]
+            }
+          ]
+    },
+    {
+        "id": "1",
+        "name": "Jane Smith",
+        "phone": "+1234567891",
+        "email": "jane.smith@example.com",
+        "address": {
+            "city": "Los Angeles",
+            "address": "456 Park Ave"
+        },
+        "image": "",
+        "age": 32,
+        "sex": "F",
+        "rating": {
+            "singles": 4.8,
+            "doubles": 4.3
+        }
+    },
+    {
+        "id": "2",
+        "name": "Emily Johnson",
+        "phone": "+1234567892",
+        "email": "emily.johnson@example.com",
+        "address": {
+            "city": "Chicago",
+            "address": "789 Oak St"
+        },
+        "image": "",
+        "age": 29,
+        "sex": "F",
+        "rating": {
+            "singles": 5.0,
+            "doubles": 4.4
+        }
+    },
+    {
+        "id": "3",
+        "name": "Michael Brown",
+        "phone": "+1234567893",
+        "email": "michael.brown@example.com",
+        "address": {
+            "city": "Houston",
+            "address": "101 Pine Ln"
+        },
+        "image": "",
+        "age": 35,
+        "sex": "M",
+        "rating": {
+            "singles": 4.6,
+            "doubles": 4.2
+        }
+    },
+    {
+        "id": "4",
+        "name": "Sophia Davis",
+        "phone": "+1234567894",
+        "email": "sophia.davis@example.com",
+        "address": {
+            "city": "Philadelphia",
+            "address": "202 Maple Dr"
+        },
+        "image": "",
+        "age": 26,
+        "sex": "F",
+        "rating": {
+            "singles": 4.9,
+            "doubles": 4.6
+        }
+    },
+    {
+        "id": "5",
+        "name": "Alex Martinez",
+        "phone": "+1234567895",
+        "email": "alex.martinez@example.com",
+        "address": {
+            "city": "Miami",
+            "address": "303 Sunset Blvd"
+        },
+        "image": "",
+        "age": 30,
+        "sex": "M",
+        "rating": {
+            "singles": 4.4,
+            "doubles": 4.0
+        }
+    },
+    {
+        "id": "6",
+        "name": "Linda Johnson",
+        "phone": "+1234567896",
+        "email": "linda.johnson@example.com",
+        "address": {
+            "city": "Seattle",
+            "address": "404 Rainy St"
+        },
+        "image": "",
+        "age": 27,
+        "sex": "F",
+        "rating": {
+            "singles": 4.7,
+            "doubles": 4.1
+        }
+    },
+    {
+        "id": "7",
+        "name": "Kevin White",
+        "phone": "+1234567897",
+        "email": "kevin.white@example.com",
+        "address": {
+            "city": "San Francisco",
+            "address": "505 Golden Gate Ave"
+        },
+        "image": "",
+        "age": 31,
+        "sex": "M",
+        "rating": {
+            "singles": 5.1,
+            "doubles": 4.7
+        }
+    },
+    {
+        "id": "8",
+        "name": "Sarah Lee",
+        "phone": "+1234567898",
+        "email": "sarah.lee@example.com",
+        "address": {
+            "city": "Las Vegas",
+            "address": "606 Casino St"
+        },
+        "image": "",
+        "age": 24,
+        "sex": "F",
+        "rating": {
+            "singles": 4.3,
+            "doubles": 4.2
+        }
+    },
+    {
+        "id": "9",
+        "name": "David Wilson",
+        "phone": "+1234567899",
+        "email": "david.wilson@example.com",
+        "address": {
+            "city": "Boston",
+            "address": "707 Freedom Rd"
+        },
+        "image": "",
+        "age": 38,
+        "sex": "M",
+        "rating": {
+            "singles": 5.4,
+            "doubles": 4.8
+        }
+    }
+]

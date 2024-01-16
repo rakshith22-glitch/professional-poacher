@@ -3,9 +3,9 @@ import { Container, Box, Typography, Avatar, Button, TextField } from '@mui/mate
 import { UPDATE_USER, GET_USER_INFO } from '../graphql/mutation';
 import { useMutation ,useQuery } from '@apollo/client';
 const ProfilePage = ({ profile }) => {
-    // const { loading1, error1, data1 } = useQuery(GET_USER_INFO);
-    // const [updateUser, { data, loading, error }] = useMutation(UPDATE_USER);
-    // console.log("USERINFO", data1)
+    const { loading1, error1, data1 } = useQuery(GET_USER_INFO);
+    const [updateUser, { data, loading, error }] = useMutation(UPDATE_USER);
+    console.log("USERINFO", data1)
     const [isEditMode, setIsEditMode] = useState(false);
     const [userInfo, setUserInfo] = useState({
         fullname: 'me',
@@ -19,12 +19,12 @@ const ProfilePage = ({ profile }) => {
     };
 
     const handleSaveClick = () => {
-        // updateUser({ variables: { 
-        //     id: profile.id, 
-        //     fullname: userInfo.fullname, 
-        //     email: userInfo.email, 
-        //     phonenumber: userInfo.phonenumber 
-        // }});
+        updateUser({ variables: { 
+            id: profile.id, 
+            fullname: userInfo.fullname, 
+            email: userInfo.email, 
+            phonenumber: userInfo.phonenumber 
+        }});
         setIsEditMode(false);
     };
 

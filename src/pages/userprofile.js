@@ -1,25 +1,25 @@
-import React from 'react';
-import ProfilePage from './profile';
-import { useState } from 'react';
-import SignUp from './signup';
+// import React from 'react';
+// import ProfilePage from './profile';
+// import { useState } from 'react';
+// import SignUp from './signup';
 
-const UserProfile = () => {
+// const UserProfile = () => {
 
-    const [userProfile, setUserProfile] = useState(null);
+//     const [userProfile, setUserProfile] = useState(null);
 
-    const handleSingupSuccess = (userData) => {
-        setUserProfile(userData);
-    };
+//     const handleSingupSuccess = (userData) => {
+//         setUserProfile(userData);
+//     };
 
-    return (
-        <div>
-            {!userProfile ? (
-                <SignUp onSignupSuccess={handleSingupSuccess} />
-            ) : (
-                <ProfilePage profile={userProfile} />
-            )}
-        </div>
-    );
-};
+//     return (
+//         <div>
+//             {!userProfile ? (
+//                 <SignUp onSignupSuccess={handleSingupSuccess} />
+//             ) : (
+//                 <ProfilePage profile={userProfile} />
+//             )}
+//         </div>
+//     );
+// };
 
-export default UserProfile;
+// export default UserProfile;

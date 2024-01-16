@@ -1,23 +1,16 @@
 import React from 'react';
-import { Card, CardContent, Typography, List, ListItem } from '@mui/material';
+import { Card, CardContent, Typography } from '@mui/material';
 
-const UserCard = ({ user }) => {
+const UserCard = ({ user, message, style }) => {
     return (
-        <Card sx={{ maxWidth: 345, m: 2 }}>
+        <Card sx={{ width: '100%', ...style, marginBottom: '10px', overflow: 'hidden', }}>
             <CardContent>
-                <Typography gutterBottom variant="h5" component="div">
+                <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
                     {user.name}
                 </Typography>
-                <Typography variant="body2" color="text.secondary">
-                    Messages:
+                <Typography variant="body2">
+                    {message}
                 </Typography>
-                <List>
-                    {user.messages.map((message, index) => (
-                        <ListItem key={index}>
-                            {message}
-                        </ListItem>
-                    ))}
-                </List>
             </CardContent>
         </Card>
     );
