@@ -10,7 +10,6 @@ import { Card } from '@mui/material';
 const UserProfileComponent = () => {
     const navigate = useNavigate();
     const [searchTerm, setSearchTerm] = useState("");
-    const [selectedUserId, setSelectedUserId] = useState(null);
 
     const handleSearchChange = (event) => {
         setSearchTerm(event.target.value.toLowerCase());
@@ -25,7 +24,6 @@ const UserProfileComponent = () => {
     );
 
     const handleCardClick = (user) => {
-        setSelectedUserId(user.id);
         navigate(`/user/${user.id}`);
     };
 

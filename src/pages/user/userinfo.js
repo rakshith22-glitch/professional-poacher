@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React  from "react";
 import { styled } from "@mui/material/styles";
 import {
   Card,
@@ -21,8 +21,6 @@ const StyledAvatar = styled(Avatar)(({ theme }) => ({
 
 
 const UserInfo = ({ user, onClick, selected }) => {
-  const [open, setOpen] = useState(false);
-  const [message, setMessage] = useState("");
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('md'));
   
