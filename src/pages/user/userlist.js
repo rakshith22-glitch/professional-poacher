@@ -1,10 +1,10 @@
+import usersData from './user.json';
+import UserInfo from "./userinfo";
 import React, { useState } from "react";
 import TextField from "@mui/material/TextField";
 import Box from "@mui/material/Box";
 import List from "@mui/material/List";
-import UserInfo from "./userinfo";
 import { useNavigate } from 'react-router-dom';
-import usersData from './user.json';
 import { Card } from '@mui/material';
 
 const UserProfileComponent = () => {
