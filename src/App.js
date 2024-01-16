@@ -9,8 +9,8 @@ import { Routes, Route } from "react-router-dom";
 import ProfilePage from "./pages/profile";
 import DummyProfile from "./pages/dummyprofile";
 import { useState } from "react";
-import MessageList from './pages/messages';
-import ChatWithPage from "./pages/chatwith";
+import MessageList from './pages/chat/messages';
+import ChatWithPage from "./pages/chat/chatwith";
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 const theme = createTheme({
   palette: {

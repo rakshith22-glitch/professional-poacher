@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { Box, TextField, Button, Typography } from '@mui/material';
-import UserCard from '../components/usercard';
-import userData from '../pages/user/user.json'; // Update the path to your JSON file
+import UserCard from '../../components/usercard';
+import userData from '../user/user.json'; // Update the path to your JSON file
 import {
     Avatar,
 } from "@mui/material";
@@ -29,18 +29,19 @@ const ChatWithPage = () => {
 
     return (
         <Box sx={{
-            width: { xs: "100%", md: "40%" },
+            width: { xs: "100%", md: "30%" },
             margin: 'auto',
             marginTop: 15,
             display: 'flex',  // Enable flex layout
             flexDirection: 'column', // Stack children vertically
-            alignItems: 'center',
+            
             border: '1px solid lightgray',
             borderRadius: '8px',
             padding: 2,
             boxShadow: 3,
             // Add scroll for long chats
         }}>      <StyledAvatar
+                sx={{ marginLeft: "40%" }}
                 alt={chat.with}
                 src={chat.image || "/default-profile.png"}
             />
@@ -58,7 +59,7 @@ const ChatWithPage = () => {
                             color: message.type === 'received' ? 'white' : 'black',
                             borderRadius: '5px',
                             padding: '10px',
-                            margin: '10px 0'
+                            margin: '10px 0',
                         }}
                     />
                 ))}

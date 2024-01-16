@@ -1,7 +1,7 @@
 import React from 'react';
 import { Grid, Box, Button } from '@mui/material';
-import UserCard from '../components/usercard';
-import chatData from '../pages/user/user.json';
+import UserCard from '../../components/usercard';
+import chatData from '../user/user.json';
 import { useNavigate } from 'react-router-dom'; // assuming you're using react-router for navigation
 import {
     Avatar,

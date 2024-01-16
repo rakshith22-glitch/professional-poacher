@@ -3,7 +3,7 @@ import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
-import UserCard from '../components/chatinterface'; // Assuming UserCard is in the same directory
+import UserCard from '../../components/chatinterface'; // Assuming UserCard is in the same directory
 import MessageList from './messages'; // Import MessageList
 import chatData from './messagedata.json'; // Import chat data
 
