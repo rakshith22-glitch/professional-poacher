@@ -134,17 +134,11 @@ const NavBar = () => {
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="fixed">
         <Toolbar disableGutters>
-          <Button variant="primary" href="/">
-          <IconButton size="large" aria-label="new notifications" color="inherit">
-        <img src={HomeIcon} alt="Icon" width="44" height="44" />
-      </IconButton>
-          </Button>
-
+          <IconButton size="large" aria-label="new notifications" color="inherit" onClick={() => navigate("/")}>
+            <img src={HomeIcon} alt="Icon" width="44" height="44" />
+          </IconButton>
           <Box sx={{ flexGrow: 1 }}>
-            {/* <Button variant="primary" href="/buy">
-              Buy/Sell
-            </Button> */}
-            <Button variant="primary" href="/users">Pickle-Partner</Button>
+            <Button variant="primary" onClick={() => navigate("/users")}>Pickle-Partner</Button>
           </Box>
 
           <Box sx={{ ml: 2, display: { xs: "none", md: "flex" } }}>
