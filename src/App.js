@@ -3,7 +3,7 @@ import { useQuery, gql } from "@apollo/client";
 import Login from "./pages/login";
 import SignUp from "./pages/signup";
 import Home from "./pages/home";
-import Userlist from './pages/user/userlist';
+import UserProfileComponent from './pages/user/userlist';
 import NavBar from "./components/navigation"
 import { Routes, Route } from "react-router-dom";
 import ProfilePage from "./pages/profile";
@@ -41,7 +41,7 @@ export default function App() {
           path="/profile"
           element={<ProfilePage profile={userProfile} />}
         />
-        <Route path="/users" element={<Userlist />} />
+        <Route path="/users" element={<UserProfileComponent />} />
         <Route path="/user/:userId" element={<DummyProfile />} />
         <Route path="/messages" element={<MessageList />} />
         <Route path="/chat/:chatWith" element={<ChatWithPage />} />
