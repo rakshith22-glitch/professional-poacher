@@ -4,7 +4,7 @@ import Login from "./pages/login";
 import SignUp from "./pages/signup";
 import Home from "./pages/home";
 import Userlist from './pages/user/userlist';
-import NavBar from "./components/navbar"
+import NavBar from "./components/navigation"
 import { Routes, Route } from "react-router-dom";
 import ProfilePage from "./pages/profile";
 import DummyProfile from "./pages/dummyprofile";
