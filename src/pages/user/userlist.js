@@ -33,8 +33,7 @@ const UserProfileComponent = () => {
             p: 2,
             display: 'flex',
             flexDirection: 'column',
-            alignItems: 'center',
-            
+            alignItems: 'center',        
             margin: "auto",
         }}>
             <Box sx={{ width: '30%', display: 'flex', justifyContent: 'center', marginTop: 8,}}>
@@ -47,7 +46,7 @@ const UserProfileComponent = () => {
                     />
                 </Card>
             </Box>
-            <List sx={{ maxHeight: '90%', overflow: 'auto', width: '100%' }}>
+            <List sx={{ maxHeight: '90%', overflow: 'auto', width: '95%' }}>
                 {filteredUsers.map((user, index) => (
                     <UserInfo user={user} key={user.id} onClick={() => handleCardClick(user)} />
                 ))}

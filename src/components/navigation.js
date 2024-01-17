@@ -140,7 +140,9 @@ const NavBar = () => {
           <Box sx={{ flexGrow: 1 }}>
             <Button variant="primary" onClick={() => navigate("/users")}>Pickle-Partner</Button>
           </Box>
-
+          <Box sx={{ flexGrow: 1 }}>
+            <Button variant="primary" onClick={() => navigate("/tournament/list")}>Tourneys</Button>
+          </Box>
           <Box sx={{ ml: 2, display: { xs: "none", md: "flex" } }}>
             <IconButton size="large" aria-label="mails" color="inherit" onClick={handleMessagePageOpen}>
               <MailIcon />
@@ -161,6 +163,7 @@ const NavBar = () => {
           >
             <Avatar sx={{ width: 32, height: 32 }}>A</Avatar>
           </IconButton>
+         
           <Box sx={{ display: { xs: "flex", md: "none" } }}>
             <IconButton
               size="large"

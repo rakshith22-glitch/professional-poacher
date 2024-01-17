@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { Box, TextField, Button, Typography } from '@mui/material';
+import { Box, TextField, Button, Typography, Card } from '@mui/material';
 import UserCard from '../../components/usercard';
 import userData from '../user/user.json'; // Update the path to your JSON file
 import {
     Avatar,
 } from "@mui/material";
 import { styled } from "@mui/material/styles";
+import { useTheme } from "@mui/material/styles";
+import { useMediaQuery } from "@mui/material"
 const StyledAvatar = styled(Avatar)(({ theme }) => ({
     width: theme.spacing(7),
     height: theme.spacing(7),
@@ -16,7 +18,8 @@ const ChatWithPage = () => {
     const { chatWith } = useParams();
     const [newMessage, setNewMessage] = useState('');
     const chat = userData[0].chats.find(c => c.with === chatWith);
-
+    const theme = useTheme();
+    const isMobile = useMediaQuery(theme.breakpoints.down('md'));
     const sendMessage = () => {
         // Logic to send message
         console.log('Sending message:', newMessage);
@@ -27,21 +30,31 @@ const ChatWithPage = () => {
         return <Typography>No chat found.</Typography>;
     }
 
+
+    const HighlightedCard = styled(Card)(({ theme, selected }) => ({
+
+        display: 'flex',
+        flexDirection: "column",
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginTop: "80px",
+        padding: theme.spacing(2),
+        backgroundColor: selected ? theme.palette.action.selected : "#fff",
+        borderRadius: theme.shape.borderRadius,
+        boxShadow: theme.shadows[1],
+        '&:hover': {
+            cursor: 'pointer',
+            boxShadow: theme.shadows[4],
+        },
+        transition: 'box-shadow 0.2s',
+        maxWidth: isMobile ? '100%' : '30%',
+    }));
+
     return (
-        <Box sx={{
-            width: { xs: "100%", md: "30%" },
-            margin: 'auto',
-            marginTop: 15,
-            display: 'flex',  // Enable flex layout
-            flexDirection: 'column', // Stack children vertically
-            
-            border: '1px solid lightgray',
-            borderRadius: '8px',
-            padding: 2,
-            boxShadow: 3,
-            // Add scroll for long chats
-        }}>      <StyledAvatar
-                sx={{ marginLeft: "40%" }}
+        <HighlightedCard
+        // Add scroll for long chats
+        >      <StyledAvatar
+
                 alt={chat.with}
                 src={chat.image || "/default-profile.png"}
             />
@@ -76,7 +89,7 @@ const ChatWithPage = () => {
                     Send
                 </Button>
             </Box>
-        </Box>
+        </HighlightedCard>
     );
 };
 

@@ -1,0 +1,90 @@
+[
+    {
+        "id": 1,
+        "name": "Spring Chess Championship",
+        "type": "Round Robin",
+        "startdate": "2024-05-15",
+        "enddate": "2024-05-15",
+        "location": "Central Park Community Center",
+        "maxParticipants": 32,
+        "entryFee": 10,
+        "description": "An exciting round robin tournament for local chess enthusiasts. Suitable for all skill levels."
+    },
+    {
+        "id": 2,
+        "name": "City Soccer Tournament 2024",
+        "type": "Single Elimination",
+        "startdate": "2024-06-20",
+        "enddate": "2024-06-22",
+        "location": "Downtown Sports Complex",
+        "maxParticipants": 16,
+        "entryFee": 20,
+        "description": "Compete in our annual city-wide soccer tournament. Open to teams of all ages."
+    },
+    {
+        "id": 3,
+        "name": "Summer Tennis Open",
+        "type": "Double Elimination",
+        "startdate": "2024-07-10",
+        "enddate": "2024-07-12",
+        "location": "Riverdale Tennis Courts",
+        "maxParticipants": 24,
+        "entryFee": 15,
+        "description": "Join us for a thrilling double elimination tennis tournament. Singles and doubles categories available."
+    },
+    {
+        "id": 4,
+        "name": "Autumn Golf Classic",
+        "type": "Stroke Play",
+        "startdate": "2024-09-05",
+        "enddate": "2024-09-07",
+        "location": "Oakwood Golf Resort",
+        "maxParticipants": 40,
+        "entryFee": 50,
+        "description": "Annual golf tournament featuring challenging courses and spectacular views. Open to all skill levels."
+    },
+    {
+        "id": 5,
+        "name": "Winter Skiing Showdown",
+        "type": "Slalom",
+        "startdate": "2024-12-15",
+        "enddate": "2024-12-17",
+        "location": "Snowy Mountain Ski Park",
+        "maxParticipants": 50,
+        "entryFee": 30,
+        "description": "Exciting skiing competition with slalom and downhill events. Ideal for winter sports enthusiasts."
+    },
+    {
+        "id": 6,
+        "name": "Regional Basketball League",
+        "type": "Round Robin",
+        "startdate": "2024-08-20",
+        "enddate": "2024-08-25",
+        "location": "City Arena Sports Hall",
+        "maxParticipants": 20,
+        "entryFee": 25,
+        "description": "Join the most awaited basketball league in the region with top local teams competing for the championship."
+    },
+    {
+        "id": 7,
+        "name": "Annual Marathon",
+        "type": "Marathon",
+        "startdate": "2024-11-03",
+        "enddate": "2024-11-03",
+        "location": "Grand City Boulevard",
+        "maxParticipants": 5000,
+        "entryFee": 40,
+        "description": "Experience the thrill of the city's largest marathon event. Open for professional athletes and amateurs alike."
+    },
+    {
+        "id": 8,
+        "name": "Youth Swim Gala",
+        "type": "Freestyle",
+        "startdate": "2024-04-12",
+        "enddate": "2024-04-14",
+        "location": "Aquatic Center",
+        "maxParticipants": 100,
+        "entryFee": 15,
+        "description": "A fun and competitive swimming event for young swimmers. Various age groups and skill levels welcome."
+    }
+]

@@ -11,7 +11,13 @@ import DummyProfile from "./pages/dummyprofile";
 import { useState } from "react";
 import MessageList from './pages/chat/messages';
 import ChatWithPage from "./pages/chat/chatwith";
+import TournamentCreation from "./pages/tournament/tournamentcreate";
+import TournamentList from "./pages/tournament/tournamentlist";
+import TournamentRegistration from "./pages/tournament/tournamentregister";
+import CourtMapComponent from "./pages/courts/map";
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+
+
 const theme = createTheme({
   palette: {
     background: {
@@ -45,6 +51,12 @@ export default function App() {
         <Route path="/user/:userId" element={<DummyProfile />} />
         <Route path="/messages" element={<MessageList />} />
         <Route path="/chat/:chatWith" element={<ChatWithPage />} />
+
+        <Route path="/tournament/create" element={<TournamentCreation />} />
+        <Route path="/tournament/list" element={<TournamentList />} />
+        <Route path="/tournament/register/:tournamentId" element={<TournamentRegistration />} />
+
+        <Route path="/courts/nearby" element={<CourtMapComponent />} />
       </Routes>
     </ThemeProvider>
   );

@@ -1,12 +1,11 @@
 import React  from "react";
-import { styled } from "@mui/material/styles";
 import {
   Card,
-
   Typography,
   Avatar,
   Box,
 } from "@mui/material";
+import { styled } from "@mui/material/styles";
 import { useTheme } from "@mui/material/styles";
 import {useMediaQuery} from "@mui/material"
 import PersonIcon from '@mui/icons-material/Person';
